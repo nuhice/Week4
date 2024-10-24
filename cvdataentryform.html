@@ -5,7 +5,25 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>CV Data Entry Form</h1>
-    
+<h1>CV Data Entry Form</h1>
+<hr>
+<form id="userForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" required><br><br>
+    <label for="username">Last Name:</label>
+    <input type="text" id="username" name="lastname"><br><br>
+    <label for="job">Job Title:</label>
+    <input type="text" id="name" name="job"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<p id="result"></p> 
+<script> 
+    document.getElementById("userForm").addEventListener("submit", function(event){ 
+    event.preventDefault(); 
+    const firstName = document.getElementById("firstName").value; 
+    localStorage.setItem("firstName", firstName); document.getElementById("result").innerText = `Hello, ${firstName}!`; this.reset(); }); 
+    const firstName = document.getElementById("username").value; 
+localStorage.setItem("firstName", firstName); 
+    </script>
 </body>
 </html>
