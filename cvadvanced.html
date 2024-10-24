@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset ="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<header>
+    <h1>Enis Nuhić</h1>
+</header>
+<img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="slika" width="100" length="100">
+<hr>
+<br>
+<nav> 
+	<ul> 
+		<li><a href="#about">About Me</a></li> 
+		<li><a href="#experience">Experience</a></li> 
+        <li><a href="#skills">Skills</a></li> 
+    </ul> 
+</nav>
+<h2>Introduction</h2>
+<p>Hello! My name is <b>Enis Nuhić</b>, and I ma <i>passionate</i> Web Developer with over <u><b>5 years</b></u> of experience. I specialiye in <u>clean</u>,<i> responsive</i> and <b>high-performance</b> websites.</p>
+<p>I have a strong background in <b>frontend</b> development.</p>
+<hr>
+<br>
+<h3>Your location</h3>
+<button onclick="getLocation()">Get My Location</button>
+<p id="location"></p>
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        document.getElementById("location").innerText = 
+            `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+    }
+
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                document.getElementById("location").innerText = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                document.getElementById("location").innerText = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                document.getElementById("location").innerText = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                document.getElementById("location").innerText = "An unknown error occurred.";
+                break;
+        }
+    }
+</script>
+
+<hr>
+
+<br><br>
+<h3>Personal Experience</h3>
+<article>Some of my personal projects include a <i>Task Manager</i> built using <b>React</b> and a <u>Portfolio Website</u> showcasing work.</article>
+<p>Visit my <a href="https://github.com/nuhice"> GitHub</a> for more projects.</p>
+<hr>
+<h3>Personal Information</h3>
+<footer>
+    <p>Contact:enis.nuhic@stu.ibu.edu.ba</p>
+    <p>2024 Enis Nuhic</p>
+</footer>
+</body>
+</html>
